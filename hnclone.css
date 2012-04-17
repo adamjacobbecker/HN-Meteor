@@ -1,0 +1,86 @@
+body {
+  font: 13px/1.25 Verdana, sans-serif;
+}
+body .container {
+  width: 976px;
+  margin: 0 auto;
+  background-color: #f6f6ef;
+  min-height: 300px;
+}
+body .container .top {
+  background-color: #f60;
+  padding: 4px 2px;
+}
+body .container .top .logo {
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 1px 5px;
+}
+body .container .top .title {
+  font-weight: bold;
+}
+body .container .top ul {
+  list-style: none;
+  display: inline;
+  padding-left: 10px;
+}
+body .container .top ul li {
+  display: inline;
+}
+body .container .top ul li a {
+  color: #000;
+  text-decoration: none;
+}
+body .container .submit-container {
+  display: none;
+  padding: 18px 3px;
+}
+body .container .submit-container .controls {
+  margin-bottom: 5px;
+}
+body .container .submit-container .controls label {
+  color: #828282;
+  width: 32px;
+  float: left;
+}
+body .container .submit-container .controls input[type=text] {
+  width: 410px;
+}
+body .container .submit-container input[type=submit] {
+  margin-left: 32px;
+}
+body .container .list-container ol.posts {
+  color: #999;
+  padding-left: 30px;
+  margin-top: 10px;
+}
+body .container .list-container ol.posts li {
+  margin-bottom: 5px;
+  position: relative;
+  padding-left: 5px;
+}
+body .container .list-container ol.posts li .upvote {
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 7px solid #999;
+  cursor: pointer;
+  display: inline-block;
+  -webkit-user-select: none;
+  position: absolute;
+  top: 6px;
+  left: -6px;
+}
+body .container .list-container ol.posts .title a {
+  color: #000;
+  text-decoration: none;
+}
+body .container .list-container ol.posts .title a:visited {
+  color: #828282;
+}
+body .container .list-container ol.posts .meta {
+  display: block;
+  color: #828282;
+  font-size: 9px;
+}

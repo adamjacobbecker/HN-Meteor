@@ -1,0 +1,59 @@
+<head>
+  <title>Leaderboard</title>  
+</head>
+
+<body>
+  {{> body}}
+</body>
+
+<template name="body">
+  <div class="container">
+      <div class="top">
+        <span class="logo">Y</span>
+        <span class="title">Hacker News</span>
+        <ul>
+          <li><a href="#" class="new">top</a> | </li>
+          <li><a href="#" class="submit">submit</a></li>
+        </ul>
+      </div>
+      
+      {{> submit}}
+      
+      {{> list}}
+      
+  </div>  
+</template>
+
+<template name="submit">
+  <div class="submit-container">
+    <div class="controls">
+      <label>title</label>
+      <input type="text" id="submit_subject" />
+    </div>
+    
+    <div class="controls">
+      <label>url</label>
+      <input type="text" id="submit_url" />
+    </div>
+    
+    <input type="submit" id="submit_btn" />
+  </div>
+</template>
+
+<template name="list">
+  <div class="list-container">
+    <ol class="posts">
+      {{#each posts}}
+        {{> post}}
+      {{/each}}
+    </ol>
+  </div>
+</template>
+
+<template name="post">
+  <li>
+    <span class="upvote"></span>
+    <span class="title"><a href="{{url}}">{{subject}}</a> {{getDomain}}</span>
+    <span class="meta">{{ups}} points {{createdAt}}</span>
+  </li>
+</template>
