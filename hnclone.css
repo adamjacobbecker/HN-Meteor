@@ -1,6 +1,12 @@
 body {
   font: 13px/1.25 Verdana, sans-serif;
 }
+body.submit .container .submit-container {
+  display: block;
+}
+body.submit .container .list-container {
+  display: none;
+}
 body .container {
   width: 976px;
   margin: 0 auto;

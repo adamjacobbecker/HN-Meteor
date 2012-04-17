@@ -56,13 +56,11 @@ if (Meteor.is_client) {
   
   Template.body.events = {
     'click a.submit': function() {
-      $('.list-container').hide();
-      $('.submit-container').show();
+      $('body').addClass('submit');
     },
     
     'click a.new': function() {
-      $('.submit-container').hide();
-      $('.list-container').show();
+      $('body').removeClass('submit');
     },
     
     
@@ -85,8 +83,7 @@ if (Meteor.is_client) {
 			Session.set("my_posts", JSON.stringify(myPosts));
 			
 			$("#submit_subject, #submit_url").val('');
-      $('.submit-container').hide();
-			$('.list-container').show();
+      $('body').removeClass('submit');
       
     }
   }
