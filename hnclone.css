@@ -79,6 +79,9 @@ body .container .list-container ol.posts .title a {
 body .container .list-container ol.posts .title a:visited {
   color: #828282;
 }
+body .container .list-container ol.posts .domain {
+  font-size: 11px;
+}
 body .container .list-container ol.posts .meta {
   display: block;
   color: #828282;
