@@ -61,6 +61,12 @@ body
           position relative
           padding-left 5px
           
+          &.mine
+            .upvote
+              display none
+            .asterisk
+              display block
+          
           .upvote
         	  width 0
         	  height 0
@@ -72,6 +78,13 @@ body
         	  -webkit-user-select none
         	  position absolute
         	  top 6px
+        	  left -6px
+        	  
+        	.asterisk
+        	  display none
+        	  color #ff6600
+        	  position absolute
+        	  top 1px
         	  left -6px
         	  
         	.title

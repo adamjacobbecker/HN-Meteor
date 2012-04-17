@@ -6,7 +6,7 @@ function getCurrentUnixTimestamp(){
 
 function calculateScore(createdAt, ups){
   var hoursSincePosted = (getCurrentUnixTimestamp() - createdAt)/3600;
-  return (ups + 1) / Math.pow((hoursSincePosted+2), 1.8);
+  return (ups) / Math.pow((hoursSincePosted+2), 1.8);
 }
 
 function updatePostScore(id){
@@ -34,6 +34,18 @@ if (Meteor.is_client) {
     }
   }
   
+  Template.post.getFormattedCreatedAt = function() {
+    var d = new Date();
+    d.setTime(this.createdAt * 1000);
+    return d.toDateString() + ' ' + d.toTimeString();
+  }
+  
+  Template.post.mine = function () {    
+    if($.inArray(this._id, $.parseJSON(Session.get("my_posts"))) !== -1){
+      return 'mine';
+    }
+  };
+  
   Template.post.events = {
     'click span.upvote': function () {
       Posts.update(this._id, {$inc: {ups: 1}});
@@ -54,13 +66,22 @@ if (Meteor.is_client) {
     
     
     'click #submit_btn': function() {
-      Posts.insert({
+      var post = Posts.insert({
 				subject: $("#submit_subject").val(), 
 				url: $("#submit_url").val(),
-				ups: 0,
+				ups: 1,
 				createdAt: getCurrentUnixTimestamp(),
-				score: 0
+				score: calculateScore(getCurrentUnixTimestamp, 1)
 			});
+			
+			if(Session.get("my_posts")){
+  			var myPosts = $.parseJSON(Session.get("my_posts"));			  
+			}else{
+			  var myPosts = new Array();
+			}
+			
+			myPosts.push(post);
+			Session.set("my_posts", JSON.stringify(myPosts));
 			
 			$("#submit_subject, #submit_url").val('');
       $('.submit-container').hide();
@@ -70,4 +91,5 @@ if (Meteor.is_client) {
   }
   
   calculateScores();
+
 }

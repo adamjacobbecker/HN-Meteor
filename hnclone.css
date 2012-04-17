@@ -59,6 +59,12 @@ body .container .list-container ol.posts li {
   position: relative;
   padding-left: 5px;
 }
+body .container .list-container ol.posts li.mine .upvote {
+  display: none;
+}
+body .container .list-container ol.posts li.mine .asterisk {
+  display: block;
+}
 body .container .list-container ol.posts li .upvote {
   width: 0;
   height: 0;
@@ -70,6 +76,13 @@ body .container .list-container ol.posts li .upvote {
   -webkit-user-select: none;
   position: absolute;
   top: 6px;
+  left: -6px;
+}
+body .container .list-container ol.posts .asterisk {
+  display: none;
+  color: #f60;
+  position: absolute;
+  top: 1px;
   left: -6px;
 }
 body .container .list-container ol.posts .title a {

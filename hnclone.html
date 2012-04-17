@@ -51,10 +51,11 @@
 </template>
 
 <template name="post">
-  <li>
+  <li class="{{mine}}">
     <span class="upvote"></span>
+    <span class="asterisk">*</span>
     <span class="title"><a href="{{url}}">{{subject}}</a></span>
     <span class="domain">{{getDomain}}</span>
-    <span class="meta">{{ups}} points {{createdAt}}</span>
+    <span class="meta">{{ups}} points {{getFormattedCreatedAt}} {{score}}</span>
   </li>
 </template>
