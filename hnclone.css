@@ -33,6 +33,10 @@ body .container .top ul {
 body .container .top ul li {
   display: inline;
 }
+body .container .top ul li.right {
+  float: right;
+  padding-right: 3px;
+}
 body .container .top ul li a {
   color: #000;
   text-decoration: none;
