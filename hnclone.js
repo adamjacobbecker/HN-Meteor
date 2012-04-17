@@ -25,7 +25,8 @@ function calculateScores(){
 if (Meteor.is_client) {
   
   Template.list.posts = function () {
-    return Posts.find({}, {sort: {score: -1}});
+    var posts = Posts.find({}, {sort: {score: -1}}).fetch();
+    return posts.slice(0,30);
   };
   
   Template.post.getDomain = function() {

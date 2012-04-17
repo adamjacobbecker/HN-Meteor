@@ -1,5 +1,16 @@
 <head>
   <title>HN in Meteor</title>  
+  <script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-24940707-11']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
 </head>
 
 <body>
@@ -18,7 +29,6 @@
       </div>
       
       {{> submit}}
-      
       {{> list}}
       
   </div>  
@@ -30,12 +40,10 @@
       <label>title</label>
       <input type="text" id="submit_subject" />
     </div>
-    
     <div class="controls">
       <label>url</label>
       <input type="text" id="submit_url" />
     </div>
-    
     <input type="submit" id="submit_btn" />
   </div>
 </template>
@@ -56,6 +64,6 @@
     <span class="asterisk">*</span>
     <span class="title"><a href="{{url}}">{{subject}}</a></span>
     <span class="domain">{{getDomain}}</span>
-    <span class="meta">{{ups}} points {{getFormattedCreatedAt}} {{score}}</span>
+    <span class="meta">{{ups}} points | {{getFormattedCreatedAt}} | {{score}}</span>
   </li>
 </template>
